@@ -43,7 +43,7 @@ function getCurrentWeather(coords) {
         .then(function(weather) {     
         var calculation = Math.round(weather.temperature * (9/5) + 32);
         cityWeather.innerText=
-        "Current forecast for " + city + '\n' + '☁️' + '\n' + 'SUMMARY: ' + weather.summary + '\n' + 'TEMPERATURE: around ' + calculation + ' ºF or ' + Math.round(weather.temperature) + " ºC" + '\n' + 'CHANCE OF PRECIPITATION: ' + (weather.precipProbability * 100) + '%' + '\n' + 'HUMIDITY: ' + (weather.humidity * 100) +'%' + '\n' + 'UV INDEX: ' + weather.uvIndex + '\n' + 'CLOUD COVER: ' + (weather.cloudCover * 100) + '%'
+        "Current forecast for " + city + '\n' + '☁️' + '\n' + 'SUMMARY: ' + weather.summary + '\n' + 'TEMPERATURE: around ' + calculation + ' ºF or ' + Math.round(weather.temperature) + " ºC" + '\n' + 'CHANCE OF PRECIPITATION: ' + Math.round(weather.precipProbability * 100) + '%' + '\n' + 'HUMIDITY: ' + Math.round(weather.humidity * 100) +'%' + '\n' + 'UV INDEX: ' + weather.uvIndex + '\n' + 'CLOUD COVER: ' + Math.round(weather.cloudCover * 100) + '%'
         })
         });
     })();
